@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow</title>
+    <style>
+        #image-wrap {
+            width: 200px;
+            height: 200px;
+            /* overflow: scroll; */
+            overflow: hidden;
+        }
+
+        #text-wrap {
+            width: 200px;
+            height: 60px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <div id="image-wrap">
+        <img src="icon.png" alt="">
+    </div>
+
+    <div id="text-wrap">
+        <span>CSS CSS CSS CSS CSS CSS CSS CSS CSS CSS CSS CSS CSS CSS CSS CSS CSS CSS CSS CSS CSS CSS CSS CSS </span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+버전 관리 시스템
+  원하는 시점(버전)으로 이동할 수 있으며, 각 버전별로 여러 개발자가 협업할 수 있는 최적의 환경을 제공하는 시스템
+  
+SVN
+  작업 내영 커밋 시 변경사항과 히스토리가 즉시 서버로 전송되기 때문에 관리가 용이
+  또한 간단한 설치와 사용방법으로 별도의 교육 없이도 초보자가 쉽게 사용 가능
+  항상 원격 저장소를 필요로 하며 서버 간 버전 관리가 힘듬
+
+Git
+  SNV이 가지고 있던 클라이언트와 서버 간의 버전 관리 문제를 보완한 시스템
+  서버뿐만 아니라 로컬에서도 버전 관리가 가능하며, 로컬이 서버가 될 수 있고 서버도 로컬이 될 수 있음
+  브랜치라는 개념을 사용하여 개발자 마음대로 로컬 환경에서도 커밋과 버전 관리가 가능
+  
+GitHub
+  Git으로 관리하는 프로젝트를 호스팅하는 사이트 중 하나
+  로컬 저장소에서 작업하던 버전들을 다른 클라이언트와 공유하기 위한 서버
+  
+로컬 버전 관리 흐름
+  0. git init
+  1. master 브랜치에서 기본 환경 세팅을 진행
+  2. git add .                          (master)
+  3. git commit -m "(메시지)"             (master)
+  4. git checkout -b (브랜치명)            (master)
+  5. 본격적인 작업 진행                       (test)
+  6. git add .                          (test)
+  7. git commit -m "(메시지)"             (test)
+  8. git checkout master                (test)
+  9. git merge (브랜치명)                  (master) 
+  10. fast-foward 진행                   (master, test)
+  
+1. git init
+2. git config --global user.email "(이메일 주소)"
+3. git config --global user.name "(ID 이름)"
+4. git add .                                          //stage file
+/*
+4-1. git status
+4-2. git rm --cached post-list.txt                    //unstage file
+4-3. git add .
+*/
+5. git commit -m "(메시지)"                              //commit file
+6. git checkout -b test
+7. git add .
+8. git commit -m "(메시지)"
+9. git log
+10. git checkout master
+11. git merge test
+12. git checkout (버전 ID 7자리)                          //checkout to id update ex) 7777777
+13. git checkout -  //checkout to latest update
+14. git checkout test
+15. git add .git
+16. git commit -m "(메시지)"
+17. git log --pretty=oneline
+18. git checkout master
+
+master에서는 초기 세팅 필수/작업하지 말것
+master에서 commit을 최소 한번 해야 기본 브랜치로 유지 가능
+
+1. git init
+/*
+1-1. git config --global user.email "(이메일 주소)"
+1-2. git config --global user.name "(ID 이름)"
+*/
+2. 파일 work.txt, config.txt 생성 후 각각 내용 입력
+3. git checkout -b test
+4. git status
+5. 파일 .gitignore 생성 후 내용에 무시할 파일 이름을 입력 ex) config.txt
+6. git add .
+7. git status
+8. git commit -m "work init"
+9. git checkout -b master
+10. git log
+11. git checkout test
+12. work.txt 내부 내용을 수정
+13. git commit -m "work modified"
+14. git checkout master
+15. git merge test
+16. git status
+
+
+1. git init
+2. git commit -m "init"
+3. git log
+4. git checkout -b test
+5. 파일 work.txt 생성 후 내용 입력
+6. git add .
+7. git commit -m "test init"
+8. git checkout -b master
+9. git checkout test
+10. work.txt 내부 내용을 수정
+11. git add .
+12. git commit -m "work init"
+13. git checkout master
+14. git merge test                      //master에 커밋된 것이 없어서 최신 커밋을 알지 못하므로 올라만 가는거라 Fast-foward
+
+
+0. 파일 생성
+1. git init
+2. git add .
+3. git commit -m "init"
+4. git checkout -b test
+5. 파일 수정
+6. git status
+7. git add .
+8. git commit -m "hello init"
+9. git checkout master
+10. git merge test
+11. git remote add origin (깃허브 레피지토리 링크)
+12. git remote -v
+13. git push origin master
+14. git clone (깃허브 레피지토리 링크) .

@@ -1,0 +1,55 @@
+<!-- 
+    relative
+        테두리를 만들어줌, 기본적으로 다른 요소의 영역을 침범하지 않음
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position - Relative</title>
+    <style>
+        .element1, .element2 {
+            position: relative;
+            width: 200px;
+            height: 100px;
+            top: 0;
+        }
+
+        .element1 {
+            background-color: red;
+        }
+
+        .element2 {
+            background-color: brown;
+            /* 겹치게 하는 경우: top: -100px */
+        }
+
+        div.in1, div.in2 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            right: 50%;
+            top: 50%;
+            transform: translate(50%, -50%); /* translate: 수평/수직 방향 이동시킬 때 사용 */
+        }
+
+        div.in1 {
+            background-color: blue;
+            z-index: 1;
+        }
+
+        div.in2 {
+            background-color: black;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="element1">
+        <div class="in1"></div>
+        <div class="in2"></div>
+    </div>
+    <div class="element2"></div>
+</body>
+</html>

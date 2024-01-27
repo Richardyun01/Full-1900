@@ -1,0 +1,61 @@
+<!--
+    리스트 태그
+    1. 순서 없는 리스트
+        <ul>태그 안에 <li>태그 사용
+        ul: unordered list
+
+        <ul>
+            <li>내용1</li>
+            <li>내용2</li>
+            <li>내용3</li>
+        </ul>
+
+    2. 순서 있는 리스트
+        <ol>태그 안에 <li>태그 사용
+        ol: ordered list
+
+        <ol type="" start="">
+            <li>내용1</li>
+            <li>내용2</li>
+            <li>내용3</li>
+        </ol>
+
+        type 값의 종류
+        1: 숫자
+        A: 알파벳 대문자순
+        a: 알파벳 소문자순
+        i: 로마 숫자
+        I: 로마 숫자
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리스트 태그</title>
+</head>
+<body>
+    <h3>제9조</h3>
+    <ul>
+        <li>서비스 이용시간은</li>
+        <li>제1항 이용시간은</li>
+    </ul>
+
+    <h3>제2조</h3>
+    <p>&ldquo;정부24&ldquo;에서 처리하는 개인정보는</p>
+    <!--ol>li*2 ul>li*2-->
+    <ol type="1" start="1">
+        <li value="3">정부24 회원정보</li>
+        <ul>
+            <li>수집근거</li>
+            <li>보유기간</li>
+        </ul>
+        <li>전자민원 신청이력</li>
+        <ul>
+            <li>수집근거</li>
+            <li>보유기간</li>
+        </ul>
+    </ol>
+</body>
+</html>

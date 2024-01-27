@@ -1,0 +1,48 @@
+.class1 {
+    height: 70px;
+}
+
+.class2 {
+    padding-top: 18px;
+}
+
+.class1 input {
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    font-family: Apple SD Gothic Neo, arial, sans-serif;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+input {
+    appearance: auto;
+    align-items: flex-start;
+    box-sizing: border-box;
+    white-space: pre;
+    padding-block: 1px;
+    padding-inline: 6px;
+}
+
+input {
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    -webkit-rtl-ordering: logical;
+}
+
+center {
+    text-align: -webkit-center;
+}

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>final</title>
+    <style>
+        /* 절대 위치 */
+        
+        #element1 {
+            z-index: 1; /* z축: 앞뒤로 보내는 값 */
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute; /*absolute: position의 화면값 */
+            left: 30%;
+            top: 20%;
+        }
+        #element2 {
+            z-index: 2;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 20%;
+            top: 30%;
+        }
+
+        /* 상대 위치 */
+        .element1, .element2 {
+            position: relative;
+            width: 200px;
+            height: 100px;
+            top: 0;
+        }
+
+        .element1 {
+            background-color: red;
+        }
+
+        .element2 {
+            background-color: blue;
+            /* 겹치게 하는 경우: top: -100px */
+        }
+
+        div.in1, div.in2 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            right: 50%;
+            top: 50%;
+            transform: translate(50%, -50%); /* translate: 수평/수직 방향 이동시킬 때 사용 */
+        }
+
+        div.in1 {
+            background-color: blue;
+            z-index: 1;
+        }
+
+        div.in2 {
+            background-color: black;
+            z-index: 1;
+        }
+
+        /* 고정된 위치 */
+        #fixed {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+        }
+
+        /* 오버플로우 */
+        #image-wrap {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        #text-wrap {
+            width: 200px;
+            height: 60px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        /* 정렬 */
+        #horizontal-vertical {
+            border: 0.5px dotted blue;
+            width: 300px;
+            height: 200px;
+            text-align: center;
+            margin: 0 auto;
+            line-height: 200px;
+        }
+
+        #item-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 400px;
+            height: 500px;
+            border: 0.5px dashed gray;
+        }
+
+        #item {
+            width: 50px;
+            height: 50px;
+            background-color: black;
+        }
+
+        /* 변환 */
+        div:nth-child(1) {
+            width: 50px;
+            height: 50px;
+            background-color: brown;
+            transition: background-color 2s 1s;
+        }
+
+        div:nth-child(1):hover { /*마우스를 올렸을 때 변화*/
+            background-color: blue;
+        }
+
+        div:nth-child(2) {
+            width: 50px;
+            height: 50px;
+            background-color: brown;
+            transition: all 1s;
+        }
+
+        div:nth-child(2):hover {
+            width: 100px;
+            background-color: red;
+            opacity: 50%;
+            transform: translateX(20px);
+        }
+
+        div:nth-child(3) {
+            background-image: url("image/arrow.png");
+            width: 50px;
+            height: 50px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            cursor: pointer;
+            transition: all 1s;
+        }
+
+        div:nth-child(3):hover {
+            transform: rotate(90deg);
+        }
+
+        /* 미디어 쿼리 */
+        body {
+            background-color: blue;
+            color: white;
+        }
+
+        header h1::before {
+            content: "1. "
+        }
+
+        header h1::after {
+            content: " .1"
+        }
+
+        @media (max-width: 1280px) {
+            body {
+                background-color: red;
+            }
+
+            header h1::before {
+                content: "2. "
+            }
+
+            header h1::after {
+                content: " .2"
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            body {
+                background-color: blue;
+            }
+
+            header h1::before {
+                content: "3. "
+            }
+
+            header h1::after {
+                content: " .3"
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="element1"></div>
+    <div id="element2"></div>
+
+    <div class="element1">
+        <div class="in1"></div>
+        <div class="in2"></div>
+    </div>
+    <div class="element2"></div>
+
+    <a href="#title" id="fixed">맨위로</a>
+
+    <div id="image-wrap">
+        <img src="icon.png" alt="">
+    </div>
+
+    <div id="text-wrap">
+        <span>CSS CSS CSS</span>
+    </div>
+
+    <div id="horizontal-vertical">수평 수직 정렬</div>
+    <div id="item-wrap">
+        <div id="item"></div>
+    </div>
+
+    <div></div>
+    <div></div>
+    <div></div>
+
+
+    <header>
+        <h1>미디어 쿼리</h1>
+    </header>
+    <section>
+        <p>@media only all and(조건문) {실행문}</p>
+    </section>
+</body>
+</html>
