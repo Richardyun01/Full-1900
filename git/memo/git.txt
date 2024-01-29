@@ -108,3 +108,5 @@ master에서 commit을 최소 한번 해야 기본 브랜치로 유지 가능
 12. git remote -v
 13. git push origin master
 14. git clone (깃허브 레피지토리 링크) .
+
+https://goddaehee.tistory.com/254
