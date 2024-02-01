@@ -1,0 +1,13 @@
+Sourcetree
+  
+설치 방법
+  1. Bitbucket 선택 (계정 만들기)
+  2. Mercurial 선택할 필요 없음
+  3. SSH키 등록 필요 없음
+  4. 계정 변경 -> 추가 -> 호스팅 서비스 GitHub/OAuth 토큰 새로고침
+  5. BitBucket 계정은 삭제
+  
+특징
+  1. 그래프
+  2. 브랜치 생성
+  3. 브랜치 이동
