@@ -1,0 +1,63 @@
+개인 저장소 흐름
+1. git init
+2. git checkout -b (브랜치명)
+3. 작업 진행
+4. git add .
+5. git commit -m "(설명)"
+6. git checkout master
+7. git merge master
+8. git remote add origin (리포지토리 주소)
+9. git remote -v
+10. git push origin master
+11. git checkout (작업할 브랜치명)
+
+12. git clone -b (브랜치명) (클론 받은 리포지토리 주소)
+
+협업 공용 저장소 흐름
+//팀장
+1. GitHub에서 organization 생성 후 리포지토리 생성
+2. git init
+3. 작업 진행
+4. git add .
+5. git commit -m "init"
+6. git remote add (공용 저장소 이름) (공용 저장소 주소)
+7. git push (공용 저장소 이름) master
+
+//전원
+1. GitHub의 organization 리포지토리으로 이동 후 fork받기
+2. fork 받은 개인 리포지토리 주소를 git에 등록
+
+//팀장
+1. git remote add origin (fork된 개인 리포지토리 주소)
+
+//팀원
+1. git clone (fork된 개인 리포지토리 주소) .
+2. git remote add (공용 저장소 이름) (공용 저장소 주소)
+
+//전원
+1. git checkout -b (브랜치명)
+2. 작업 진행
+3. git add .
+4. git commit -m "(설명)"
+5. git checkout master
+6. git merge master
+7. git push origin master
+8. git checkout (작업할 브랜치명)
+
+9. GitHub의 개인 리포지토리에 PR 요청 보내기
+10. 팀장에게 보고
+
+//팀장
+1. PR 받으면 organization에서 확인 후 merge하기
+2. 전체에게 pull 받으라고 안내
+
+//팀원
+1. git add .
+2. git commit -m "for pull"
+3. git checkout master
+4. git pull (공용 저장소 이름) master
+5. git checkout (작업 브랜치)
+
+6. 현재 작업에 pull받은 작업이 필요하면
+7. git merge master
+8. 작업 진행
