@@ -2,5 +2,9 @@
 
 data = 10;
 console.log(typeof data);
+console.log(data + 10);
+
 data = "string";
 console.log(typeof data);
+//console.log(data + "string");
+console.log(`${data}string`);
