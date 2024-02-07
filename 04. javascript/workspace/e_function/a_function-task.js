@@ -9,8 +9,9 @@ count1();
 
 //"홍길동"을 n번 출력하는 함수
 function count2(n) {
+    let name = "홍길동";
     for (let i = 0; i < n; i++) {
-        console.log("홍길동");
+        console.log(name);
     }
 }
 
