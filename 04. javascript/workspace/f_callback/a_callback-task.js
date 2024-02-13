@@ -112,7 +112,7 @@
 //결제 상품 가격과 결제 상태를 전달받아서
 //결제 상태가 true일 때 "000원 결제 완료"
 //결제 상태가 false일 때 "000원 결제 취소" 출력
-
+//(1)
 const process = (price, status, callback) => {
     if (callback) {
         return callback(price, status);
@@ -123,10 +123,24 @@ const message = (price, status) => {
     return status ? `${price}원 결제 완료` : `${price}원 결제 취소`;
 };
 
-const payment1 = process(10000, true, message);
-console.log(payment1);
-const payment2 = process(10000, false, message);
-console.log(payment2);
+console.log(process(10000, true, message));
+console.log(process(10000, false, message));
+
+//(2) 강사
+const setStatus = (price, status, callback) => {
+    let result = status ? `${price}원 결제 완료` : `${price}원 결제 취소`;
+    if (callback) {
+        callback(result);
+    }
+
+    return result;
+};
+
+setStatus(3000, true, (message) => {
+    console.log(message);
+});
+
+setStatus(3000, false, console.log);
 
 //콜백함수 3개 만들기: 목적 2개를 이으면 됨
 //세 수 곱하기
