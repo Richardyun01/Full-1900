@@ -17,3 +17,6 @@ dinner.pay = (money) => {
 dinner.pay(user);
 //원본 객체인 user의 money는 이미 수정되어 있음
 console.log(user.money);
+
+//instance: 객체화
+//instance variable: 객체화를 통해 나온 객체
