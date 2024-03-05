@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체를 동적으로 생성, 삽입, 삭제</title>
+</head>
+<body>
+    <p>DOM 트리에 동적으로 객체 삽입 가능</p>
+    <p>
+        createElement("태그명"), appendChild("태그객체"), removeChild("태그객체")
+    </p>
+    <p>위 3개의 메소드를 사용해서 새로운 객체를 생성, 삽입, 삭제할 수 있음</p>
+    <a href="javascript:createDIV()" id="create">DIV 생성</a>
+</body>
+<script>
+    let i = 0;
+    const colors = new Array("yellow", "red", "blue", "green", "orange", "pink", "black");
+    const createDIV = () => {
+        const rand = Math.floor(Math.random() * colors.length)
+        const div = document.createElement("div");
+        div.innerText = `새로 생성된 DIV${++i} 태그`;
+        div.style.backgroundColor = colors[rand];
+        document.body.appendChild(div);
+    }
+</script>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클릭 이벤트 실습</title>
+</head>
+<body>
+    <form action="">
+        <div>
+            <input type="text" id="id" placeholder="아이디">
+        </div>
+        <p class="id-msg"></p>
+
+        <div>
+            <input type="text" id="pw" placeholder="비밀번호">
+        </div>
+        <p class="pw-msg"></p>
+
+        <button type="button">검사</button>
+    </form>
+</body>
+<script>
+    //검사 버튼 클릭 시
+    //1. 아이디 검사
+    //1-1. 아이디가 입력되지 않았을 때 아래의 p태그에 적절한 메세지 작성(빨간색)
+    //1-2. 아이디가 입력되었을 때 아래의 p태그에 적절한 메세지 작성(녹색)
+
+    //2. 비밀번호 검사
+    //2-1. 비밀번호가 입력되지 않았을 때 아래의 p태그에 적절한 메세지 작성(빨간색)
+    //2-2. 비밀번호가 입력되었을 때 아래의 p태그에 적절한 메세지 작성(녹색)
+    const input1 = document.querySelector("#id");
+    const target1 = document.querySelector(".id-msg");
+    const input2 = document.querySelector("#pw");
+    const target2 = document.querySelector(".pw-msg");
+
+    const checkInput = () => {
+        if (input1.value === "") {
+            target1.innerText = "id 미입력";
+            target1.style.color = "red";
+        } else {
+            target1.innerText = "id 입력됨";
+            target1.style.color = "green";
+        }
+
+        if (input2.value === "") {
+            target2.innerText = "pw 미입력";
+            target2.style.color = "red";
+        } else {
+            target2.innerText = "pw 입력됨";
+            target2.style.color = "green";
+        }
+    };
+
+    const button = document.querySelector("button");
+    button.addEventListener("click", checkInput);
+</script>
+</html>
