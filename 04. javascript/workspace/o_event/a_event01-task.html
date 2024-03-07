@@ -6,53 +6,58 @@
     <title>클릭 이벤트 실습</title>
 </head>
 <body>
-    <form action="">
+    <form action="" name="login">
         <div>
             <input type="text" id="id" placeholder="아이디">
         </div>
-        <p class="id-msg"></p>
+        <p></p>
 
         <div>
             <input type="text" id="pw" placeholder="비밀번호">
         </div>
-        <p class="pw-msg"></p>
+        <p></p>
 
-        <button type="button">검사</button>
+        <button type="button" id="check">검사</button>
     </form>
 </body>
 <script>
     //검사 버튼 클릭 시
-    //1. 아이디 검사
-    //1-1. 아이디가 입력되지 않았을 때 아래의 p태그에 적절한 메세지 작성(빨간색)
-    //1-2. 아이디가 입력되었을 때 아래의 p태그에 적절한 메세지 작성(녹색)
-
-    //2. 비밀번호 검사
-    //2-1. 비밀번호가 입력되지 않았을 때 아래의 p태그에 적절한 메세지 작성(빨간색)
-    //2-2. 비밀번호가 입력되었을 때 아래의 p태그에 적절한 메세지 작성(녹색)
-    const input1 = document.querySelector("#id");
-    const target1 = document.querySelector(".id-msg");
-    const input2 = document.querySelector("#pw");
-    const target2 = document.querySelector(".pw-msg");
-
-    const checkInput = () => {
-        if (input1.value === "") {
-            target1.innerText = "id 미입력";
-            target1.style.color = "red";
+    const check = document.getElementById("check");
+    check.addEventListener("click", (e) => {
+        //input태그
+        const id = document.login.id;
+        const idHelp = id.parentElement.nextElementSibling;
+        //1. 아이디 검사
+        if (!id.value) {
+            //1-1. 아이디가 입력되지 않았을 때 아래의 p태그에 적절한 메세지 작성(빨간색)
+            with (idHelp) {
+                innerText = '아이디를 입력해주세요';
+                style.color = "red";
+            }
         } else {
-            target1.innerText = "id 입력됨";
-            target1.style.color = "green";
+            //1-2. 아이디가 입력되었을 때 아래의 p태그에 적절한 메세지 작성(녹색)
+            with (idHelp) {
+                innerText = '아이디 입력 완료';
+                style.color = "green";
+            }
         }
 
-        if (input2.value === "") {
-            target2.innerText = "pw 미입력";
-            target2.style.color = "red";
+        //2. 비밀번호 검사
+        const pw = document.login.pw;
+        const pwHelp = pw.parentElement.nextElementSibling;
+        if (!pw.value) {
+            //2-1. 비밀번호가 입력되지 않았을 때 아래의 p태그에 적절한 메세지 작성(빨간색)
+            with (pwHelp) {
+                innerText = '비밀번호를 입력해주세요';
+                style.color = "red";
+            }
         } else {
-            target2.innerText = "pw 입력됨";
-            target2.style.color = "green";
+            //2-2. 비밀번호가 입력되었을 때 아래의 p태그에 적절한 메세지 작성(녹색)
+            with (pwHelp) {
+                innerText = '비밀번호 입력 완료';
+                style.color = "green";
+            }
         }
-    };
-
-    const button = document.querySelector("button");
-    button.addEventListener("click", checkInput);
+    });
 </script>
 </html>

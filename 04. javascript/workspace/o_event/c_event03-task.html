@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이벤트 실습</title>
+    <style>
+        #container {
+            padding: 50px;
+            background-color: brown;
+        }
+
+        #container p {
+            background-color: burlywood;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <p id="text">잘가</p>
+    </div>
+</body>
+<script>
+    //div태그에 마우스를 올리면 p태그의 내용이 안녕으로 바뀌고
+    //마우스를 떼면 잘가로 바뀜
+    const container = document.getElementById("container");
+    const text = document.getElementById("text");
+    container.addEventListener("mouseover", (e) => {
+        text.innerText = "안녕";
+    })
+    container.addEventListener("mouseleave", (e) => {
+        text.innerText = "잘가";
+    })
+</script>
+</html>

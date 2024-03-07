@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이벤트</title>
+</head>
+<body>
+    <div id="container1">
+        <p>내용 1</p>
+        <p>내용 2</p>
+        <p>내용 3</p>
+    </div>
+
+    <div id="container2">
+        <p>내용 4</p>
+        <p>내용 5</p>
+        <p>내용 6</p>
+    </div>
+</body>
+<script>
+    const container1 = document.getElementById("container1");
+    container1.addEventListener("mouseout", (e) => {
+        console.log(e.target);
+        e.target.style.backgroundColor = "pink";
+    })
+
+    const container2 = document.getElementById("container2");
+    container2.addEventListener("mouseleave", (e) => {
+        console.log(e.target);
+        e.target.style.backgroundColor = "pink";
+    })
+</script>
+</html>
